@@ -1,6 +1,6 @@
 #'Function to compute a scalogram
 #'
-#'The function decompose the variance of a variable \code{x} on a basis of 
+#'The function decomposes the variance of a variable \code{x} on a basis of 
 #'orthogonal vectors. The significance of the associated R-squared values is 
 #'tested by a randomization procedure. A smoothed scalogram is obtained by 
 #'summing the R-squared values into \code{nblocks}.
@@ -139,7 +139,7 @@ plot.scalogram <- function(x, pos = -1, plot = TRUE, ...){
     
     ## parameters management
     params <- list()
-    params$obs <- list(p1d.horizontal = FALSE, plabels.cex = 2, paxes.draw = TRUE, ylab = expression(R^2), scales = list(x = list(labels = x$names)))
+    params$obs <- list(p1d.horizontal = FALSE, plabels.cex = 2, paxes.draw = TRUE, ylab = expression(R^2), scales = list(x = list(labels = x$names)), ylim = c(0,1))
     params$sim <- list(p1d.horizontal = FALSE)
     names(params) <- graphsnames
     sortparameters <- modifyList(params, sortparameters, keep.null = TRUE)
