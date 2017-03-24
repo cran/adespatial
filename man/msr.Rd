@@ -2,15 +2,20 @@
 % Please edit documentation in R/msr.R
 \name{msr}
 \alias{msr}
+\alias{msr.default}
 \title{Moran spectral randomization}
 \usage{
-msr(x, listwORorthobasis, nrepet = 99, method = c("pair", "triplet",
-  "singleton"), cor.fixed, nmax = 100, simplify = TRUE)
+msr(x, ...)
+
+\method{msr}{default}(x, listwORorthobasis, nrepet = 99, method = c("pair",
+  "triplet", "singleton"), cor.fixed, nmax = 100, simplify = TRUE, ...)
 }
 \arguments{
-\item{x}{a \code{vector}, a \code{matrix} or a \code{data.frame} with the 
+\item{x}{For \code{msr.default}, a \code{vector}, a \code{matrix} or a \code{data.frame} with the 
 original variables. If \code{NCOL(x) > 1}, then the joint randomization 
 procedure that preserves the correlations among variables is used.}
+
+\item{\dots}{further arguments passed to or from other methods}
 
 \item{listwORorthobasis}{an object of the class \code{listw} (spatial 
 weights) created by the functions of the \pkg{spdep} package or an object 
@@ -98,10 +103,6 @@ apply(x1, 2, function(x) moran.mc(x, listw = lw1, nsim = 2)$statistic)
 apply(x1.6[[1]], 2, function(x) moran.mc(x, listw = lw1, nsim = 2)$statistic)
 
 }
-\author{
-Stephane Dray \email{stephane.dray@univ-lyon1.fr} and Helene H 
-  Wagner \email{helene.wagner@utoronto.ca}
-}
 \references{
 Wagner, H.H. and Dray S. (2015) Generating spatially-constrained 
   null models for irregularly spaced data using Moran spectral randomization 
@@ -111,5 +112,8 @@ Wagner, H.H. and Dray S. (2015) Generating spatially-constrained
 \seealso{
 \code{\link{scores.listw}}, \code{\link[spdep]{nb2listw}}
 }
+\author{
+Stephane Dray \email{stephane.dray@univ-lyon1.fr} and Helene H 
+  Wagner \email{helene.wagner@utoronto.ca}
+}
 \keyword{spatial}
-

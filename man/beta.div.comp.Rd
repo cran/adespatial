@@ -85,9 +85,6 @@ out2$part
 }
 
 }
-\author{
-Pierre Legendre \email{pierre.legendre@umontreal.ca}
-}
 \references{
 Baselga, A. (2010) Partitioning the turnover and nestedness components of beta
 diversity. Global Ecology and Biogeography, 19, 134–143.
@@ -119,4 +116,6 @@ Podani, J. & Schmera, D. 2011. A new conceptual and methodological framework
 for exploring and explaining pattern in presence-absence data. Oikos, 120,
 1625–1638.
 }
-
+\author{
+Pierre Legendre \email{pierre.legendre@umontreal.ca}
+}

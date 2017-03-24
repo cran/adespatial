@@ -3,12 +3,14 @@
 \name{WRperiodogram}
 \alias{WRperiodogram}
 \alias{plot.WRperio}
+\alias{plot.WRperio}
 \title{Whittaker-Robinson periodogram}
 \usage{
 WRperiodogram(x, T1 = 2, T2, nperm = 499, nopermute, mult = c("sidak",
   "bonferroni"), print.time = FALSE)
 
-\method{plot}{WRperio}(x, prog = 1, alpha = 0.05, line.col = "red", ...)
+\method{plot}{WRperio}(x, prog = 1, alpha = 0.05, line.col = "red",
+  main = NULL, ...)
 }
 \arguments{
 \item{x}{A vector of quantitative values, with class \code{numeric}, for 
@@ -40,6 +42,9 @@ to alpha are represented by black symbols. Default: \code{alpha=0.05}.}
 
 \item{line.col}{Colour of the lines between symbols in the graph (default: 
 \code{line.col="red"}).}
+
+\item{main}{Main title of the plot. Users can write a custom title, in quotes 
+(default: \code{main="WR Periodogram"}).}
 
 \item{\dots}{Other graphical arguments passed to this function.}
 }
@@ -169,10 +174,6 @@ plot(ld.res.perio, prog=3) # Graph with progressive correction
 acf(ldeaths)   # acf() results, for comparison
 
 }
-\author{
-Pierre Legendre \email{pierre.legendre@umontreal.ca} and Guillaume
-  Guenard
-}
 \references{
 Enright, J. T. 1965. The search for rhythmicity in biological time-series. 
 Journal of Theoretical Biology 8: 426-468.
@@ -188,5 +189,8 @@ monitored by the EMSO-Açores MoMAR observatory. Deep-Sea Research I 90:
 Whittaker, E. T. and G. Robinson. 1924. The calculus of observations – A 
 treatise on numerical mathematics. Blackie & Son, London.
 }
+\author{
+Pierre Legendre \email{pierre.legendre@umontreal.ca} and Guillaume
+  Guenard
+}
 \keyword{multivariate}
-

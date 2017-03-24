@@ -100,9 +100,6 @@ col = c("white", "brown"), main = "Doubs fish abundance diff. LCBD")
 }
 
 }
-\author{
-Pierre Legendre \email{pierre.legendre@umontreal.ca}
-}
 \references{
 Legendre, P. 2014. Interpreting the replacement and richness 
   difference components of beta diversity. Global Ecology and Biogeography 
@@ -112,5 +109,7 @@ Legendre, P. 2014. Interpreting the replacement and richness
   community data: dissimilarity coefficients and partitioning. Ecology 
   Letters 16: 951-963.
 }
+\author{
+Pierre Legendre \email{pierre.legendre@umontreal.ca}
+}
 \keyword{spatial}
-

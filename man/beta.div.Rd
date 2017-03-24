@@ -176,9 +176,6 @@ g2+g1
 }
 
 }
-\author{
-Pierre Legendre \email{pierre.legendre@umontreal.ca}
-}
 \references{
 Chao, A., R. L. Chazdon, R. K. Colwell and T. J. Shen. 2006.
   Abundance-based similarity indices and their estimation when there are
@@ -198,4 +195,6 @@ Chao, A., R. L. Chazdon, R. K. Colwell and T. J. Shen. 2006.
   Legendre, P. and Legendre, L. 2012. Numerical Ecology. 3rd English edition.
   Elsevier Science BV, Amsterdam.
 }
-
+\author{
+Pierre Legendre \email{pierre.legendre@umontreal.ca}
+}

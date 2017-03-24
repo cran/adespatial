@@ -73,6 +73,8 @@
 #'   to alpha are represented by black symbols. Default: \code{alpha=0.05}.
 #' @param line.col Colour of the lines between symbols in the graph (default: 
 #'   \code{line.col="red"}).
+#' @param main Main title of the plot. Users can write a custom title, in quotes 
+#'   (default: \code{main="WR Periodogram"}).
 #' @param \dots Other graphical arguments passed to this function.
 #' @return The function produces an object of class \code{WRperio} containing a 
 #'   table with the following columns:
@@ -161,7 +163,7 @@
 #' plot(ld.res.perio, prog=3) # Graph with progressive correction
 #' acf(ldeaths)   # acf() results, for comparison
 #' 
-#' @useDynLib adespatial
+#' @useDynLib adespatial, .registration = TRUE 
 #' @importFrom graphics lines points
 #' @export WRperiodogram
 WRperiodogram <- function(x, T1 = 2, T2, nperm = 499, nopermute, mult = c("sidak", "bonferroni"), print.time = FALSE) 
@@ -179,7 +181,7 @@ WRperiodogram <- function(x, T1 = 2, T2, nperm = 499, nopermute, mult = c("sidak
   pidx <- if(missing(nopermute)) 1L:length(x) else (1L:length(x))[-nopermute]
   #
   a <- system.time({
-  	res <- .C("WRperiodogram",as.double(x),n,as.integer(T1),as.integer(T2),double(nk),
+  	res <- .C("C_WRperiodogram",as.double(x),n,as.integer(T1),as.integer(T2),double(nk),
             as.integer(nperm),pidx-1L,length(pidx),integer(nk),NAOK = TRUE, PACKAGE = "adespatial")[c(5L,9L)]
 	})
   a[3] <- sprintf("%2f",a[3])
@@ -204,10 +206,12 @@ WRperiodogram <- function(x, T1 = 2, T2, nperm = 499, nopermute, mult = c("sidak
 
 #' @rdname WRperiodogram
 #' @export
-plot.WRperio <- function(x, prog=1, alpha=0.05, line.col="red", ...)
+plot.WRperio <- function(x, prog = 1, alpha = 0.05, line.col = "red", main = NULL, ...)
 {
+  if(is.null(main))
+        main <- "WR Periodogram" 
   plot(x[,1], x[,2], col="red", xlab="Period", 
-       ylab="Whittaker-Robinson stat.", ylim=c(0, max(x[,2])))
+       ylab="Whittaker-Robinson stat.", ylim=c(0, max(x[,2])), main = main, ...)
   lines(x[,1], x[,2], col=line.col)              # Plot W-R statistics
   points(x[,1], x[,2], pch=22, bg="white")       # Re-plot points as white squares
   if(is.na(x[1,3])) cat("p-values in the W-R periodogram were not computed\n")
