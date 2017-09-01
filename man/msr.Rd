@@ -33,7 +33,7 @@ original variable and its randomized replicates}
 
 \item{simplify}{A logical value. If \code{TRUE}, the outputs for univariate 
 procedures are returned in a matrix where each column corresponds to a 
-replicate. If \code{FALSE}n a \code{list} is returned.}
+replicate. If \code{FALSE} a \code{list} is returned.}
 }
 \value{
 Either a matrix (if \code{simplify} is \code{TRUE}) or a list with 
