@@ -6,11 +6,12 @@ library(spdep)
 library(maptools)
 
 ## ---- echo = -1----------------------------------------------------------
+data(mafragh)
+class(mafragh$Spatial)
 par(mar = c(0, 0, 3, 0))
-columbus <- readShapePoly(system.file("etc/shapes/columbus.shp", package="spdep")[1])
-xx <- poly2nb(columbus)
-plot(columbus, border = "grey")
-plot(xx, coordinates(columbus), add = TRUE, pch = 20, col = "red")
+xx <- poly2nb(mafragh$Spatial)
+plot(mafragh$Spatial, border = "grey")
+plot(xx, coordinates(mafragh$Spatial), add = TRUE, pch = 20, col = "red")
 title(main="Neighborhood for polygons")
 
 ## ---- echo = -1----------------------------------------------------------
