@@ -1,4 +1,4 @@
-654dc241a70ea326dc7bfd989fcccd4d *DESCRIPTION
+98e30c1e674930fa15b1bccc8df71bdf *DESCRIPTION
 9ac5ed57fd0c265ad713986052488584 *NAMESPACE
 94bdf730f42fc22f123f53e7c7601ef4 *R/Cperiodogram.R
 28b194a32afd0a9472ba0539c69fa4f9 *R/LCBD.comp.R
@@ -28,7 +28,7 @@ e058a42ffb262ce6b737fe4fd81b4dd5 *R/mfpa.R
 3334f298652625c59a9a969a736d2afb *R/mspa.R
 8225e2469bcf470819a68e859736012d *R/msr.4thcorner.R
 a5ae0a8d8e0ff29d39b770fcb0ce7b6c *R/msr.R
-23f99c4e6d60383d17fd4291ec70d0eb *R/msr.mantelrtest.R
+819ae918281028e4fd5bfe4c46b3f7f5 *R/msr.mantelrtest.R
 bef34520ac7fb07e4cfa58e86ca8d5a0 *R/msr.varipart.R
 37a8f3d128e9249b52479740be77a338 *R/mst.nb.R
 1b8a7e41f9ec19d87383bda0425f0844 *R/multispati.R
@@ -43,7 +43,7 @@ cd1da0d301638d6393890b8e94b1bed1 *R/rotation.R
 26dd55b1d39d83f4344ef244a485cbef *R/trichoptera.R
 99ae8be60f6b9a1220b4449fe285b652 *R/utils-aem.R
 6ef116667e2b6e52ee58567610e99c63 *R/variogmultiv.R
-0268651e6e50fc6a363d1320d603eab0 *build/vignette.rds
+477a5ec30e4a1afe7a2d246e6232e3cc *build/vignette.rds
 4352f68bce08aaa44f5d1f30209e238e *data/bacProdxy.rda
 c93517de9760986b7de1cc37111089e9 *data/mastigouche.rda
 a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
@@ -51,7 +51,7 @@ a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 c0f6fa59550c390fe762150b34b65653 *inst/createlistw/www/style.css
 77ac200eab3e44de109b8a1ed03c3238 *inst/doc/tutorial.R
 69c60a2de936d857413b2d4bfc66b863 *inst/doc/tutorial.Rmd
-ecad12aaad35267504204bf4fcc771cf *inst/doc/tutorial.html
+0f8a986b587b857d0aa626fb7c74d6fd *inst/doc/tutorial.html
 b3bd997f9e3f048657d2cfd6f48cd000 *man/Cperiodogram.Rd
 191ebde62165d877b7a728a394029d46 *man/LCBD.comp.Rd
 d51850413b59f04b9722cce2318a6f31 *man/WRperiodogram.Rd
@@ -80,7 +80,7 @@ c225654da87fad69907c21e45e846ef7 *man/moranNP.randtest.Rd
 5c7cd42dbc6c2b96e96cfd9f97482a98 *man/mspa.Rd
 23a644921f11c224ee139d6d7cb88798 *man/msr.4thcorner.Rd
 6b332388b7e294d8e531c53cf500be36 *man/msr.Rd
-ec636e834851c632a2c09d7f88270449 *man/msr.mantelrtest.Rd
+5c9bf0aad96740924e34b554362c8a29 *man/msr.mantelrtest.Rd
 5bb385e08935a109e82adeacd888f2aa *man/msr.varipart.Rd
 09581f26fca81d9073fe588871e8fccb *man/mst.nb.Rd
 38b2700c446acda1304b6c2a43500526 *man/multispati.Rd

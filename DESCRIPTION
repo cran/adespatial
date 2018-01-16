@@ -1,7 +1,7 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.1-0
-Date: 2017-12-18
+Version: 0.1-1
+Date: 2018-01-16
 Author: Stéphane Dray, Guillaume Blanchet, Daniel Borcard, Sylvie Clappe, Guillaume Guenard,
     Thibaut Jombart, Guillaume Larocque, Pierre Legendre, Naima Madi, Helene H Wagner
 Description: Tools for the multiscale spatial analysis of multivariate data.
@@ -10,12 +10,12 @@ Description: Tools for the multiscale spatial analysis of multivariate data.
 Maintainer: Stéphane Dray <stephane.dray@univ-lyon1.fr>
 Imports: ade4 (>= 1.7-10), adegraphics, adephylo, sp, spdep, lattice,
         methods, grDevices, graphics, MASS, stats, utils, shiny
-Suggests: vegan, knitr, maptools, ape, rmarkdown
+Suggests: vegan, knitr, RANN, rgeos, maptools, ape, rmarkdown
 License: GPL (>= 2)
 Encoding: UTF-8
 NeedsCompilation: yes
 RoxygenNote: 6.0.1
-VignetteBuilder: knitr
-Packaged: 2017-12-18 10:05:12 UTC; stephane
+VignetteBuilder: knitr, rmarkdown, RANN, rgeos, maptools
+Packaged: 2018-01-16 17:50:52 UTC; stephane
 Repository: CRAN
-Date/Publication: 2017-12-18 12:13:47 UTC
+Date/Publication: 2018-01-16 18:15:05 UTC

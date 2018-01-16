@@ -14,9 +14,9 @@
 #'   of class \code{orthobasis}
 #' @param nrepet an \code{integer} indicating the number of replicates
 #' @param method an character specifying which algorithm should be used to 
-#'   produce spatial replicates (see code{\link{msr.default}}).
-#' @param \dots further arguments of the code{\link{msr.default}} function.
-#' @return An object of class \code{4thcorner} randomized replicates.
+#'   produce spatial replicates (see \code{\link{msr.default}}).
+#' @param \dots further arguments of the \code{\link{msr.default}} function.
+#' @return An object of class \code{randtest}.
 #' @author Sylvie Clappe, Stephane Dray \email{stephane.dray@@univ-lyon1.fr}
 #' @seealso \code{\link{msr.default}}, \code{\link[ade4]{mantel.randtest}}
 #' @references Crabot, J., Clappe, S., Dray, S. and Datry, T. (submitted) 
@@ -25,8 +25,8 @@
 #' @keywords spatial
 #' @examples
 #' 
-#' if(require("ade4", quietly = TRUE) & require("adephylo", quietly = TRUE)
-#' & require("spdep", quietly = TRUE) & require("ape", quietly = TRUE)){
+#' if(require("ade4", quietly = TRUE) 
+#' & require("spdep", quietly = TRUE)){
 #' data(mafragh, package = "ade4")
 #' 
 #' d1 <- dist(mafragh$env[,1:3])

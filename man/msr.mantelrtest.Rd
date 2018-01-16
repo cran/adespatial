@@ -17,12 +17,12 @@ of class \code{orthobasis}}
 \item{nrepet}{an \code{integer} indicating the number of replicates}
 
 \item{method}{an character specifying which algorithm should be used to 
-produce spatial replicates (see code{\link{msr.default}}).}
+produce spatial replicates (see \code{\link{msr.default}}).}
 
-\item{\dots}{further arguments of the code{\link{msr.default}} function.}
+\item{\dots}{further arguments of the \code{\link{msr.default}} function.}
 }
 \value{
-An object of class \code{4thcorner} randomized replicates.
+An object of class \code{randtest}.
 }
 \description{
 This function allows to test the Mantel statistic using constrained null 
@@ -35,8 +35,8 @@ orthonormal eigenvectors (Moran's Eigenvector Maps, MEM).
 }
 \examples{
 
-if(require("ade4", quietly = TRUE) & require("adephylo", quietly = TRUE)
-& require("spdep", quietly = TRUE) & require("ape", quietly = TRUE)){
+if(require("ade4", quietly = TRUE) 
+& require("spdep", quietly = TRUE)){
 data(mafragh, package = "ade4")
 
 d1 <- dist(mafragh$env[,1:3])
