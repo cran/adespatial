@@ -2,12 +2,12 @@
 #' Eigenvector Maps)
 #'
 #' \code{mem.select} computes the spatial eigenvectors (MEM) of the spatial
-#' weighting matrix (SWM) provided (\code{listw}) and optimize the selection of
+#' weighting matrix (SWM) provided (\code{listw}) and optimizes the selection of
 #' a subset of MEM variables relative to response variable(s) stored in
 #' \code{x}. The optimization is done either by maximizing the adjusted
 #' R-squared (R2) of all (\code{method = "global"}) or a subset (\code{method =
 #' "FWD"}) of MEM variables or by minimizing the residual spatial
-#' autocorrelation (\code{method = "MIR"}).
+#' autocorrelation (\code{method = "MIR"}) (see details in Bauman et al. 2018a).
 #'
 #' @param x A vector, matrix, or dataframe of response variable(s). The
 #'   \code{method = "MIR"} is only implemented for a vector response. Note that
@@ -59,12 +59,12 @@
 #'   the environment to the variability of the response data (Griffith 2003, Dray
 #'   et al. 2006, Blanchet et al. 2008, Peres-Neto and Legendre 2010, Diniz-Filho
 #'   et al. 2012). Although several eigenvector selection approaches have been 
-#'   proposed to select a best subset of eigenvectors, Bauman et al. (2018) showed 
+#'   proposed to select a best subset of eigenvectors, Bauman et al. (2018b) showed 
 #'   that two main procedures should be preferred, depending on the underlying 
 #'   objective: the forward selection with double stopping criterion (Blanchet et
 #'   al. 2008; \code{method = "FWD"}) or the minimization of the residual spatial 
 #'   autocorrelation (Griffith and Peres-Neto 2006; MIR selection in Bauman et al.
-#'   2018, \code{method = "MIR"}). 
+#'   2018a,b, \code{method = "MIR"}). 
 #'   The most powerful and accurate selection method, in terms of R2 estimation,
 #'   is the forward selection. This method should be preferred when the objective 
 #'   is to capture as accurately as possible the spatial patterns of \code{x}. If 
@@ -78,16 +78,16 @@
 #'   residuals of a model of \code{x} against a set of actual predictors (e.g.
 #'   environmental) with a small number of spatial predictors, then accuracy is
 #'   not as important and one should focus mainly on the number of spatial
-#'   predictors (Bauman et al. 2018). In this case, \code{method = "MIR"} is more 
+#'   predictors (Bauman et al. 2018b). In this case, \code{method = "MIR"} is more 
 #'   adapted, as it has the advantage to maintain the standard errors of the actual 
 #'   predictor coefficients as low as possible. Note that \code{method = "MIR"} can 
 #'   only be used for a univariate \code{x}, as the Moran's I is a univariate index. 
 #'   If \code{x} is multivariate, then the best criterion is the forward selection 
-#'   (see Bauman et al. 2018).
+#'   (see Bauman et al. 2018b).
 #'   A third option is to not perform any selection of MEM variables 
 #'   (\code{method = "global"}). This option may be interesting when the complete set 
 #'   of MEM variables will be used, like in Moran spectral randomizations (Wagner and
-#'   Dray 2015) or when using smoothed MEM (Munoz 2009).
+#'   Dray 2015, Bauman et al. 2018c) or when using smoothed MEM (Munoz 2009).
 #'
 #'   For \code{method = "MIR"}, the global test consists in computing the
 #'   Moran's I of \code{x} (e.g. residuals of the model of the response variable
@@ -113,7 +113,16 @@
 #'   function performs a forward selection with double stopping criterion that 
 #'   searches among the set of generated spatial predictors the one that best maximizes 
 #'   the R2 of the model. The procedure is repeated untill one of the two stopping
-#'   criterion is reached (see Blanchet et al. 2008).
+#'   criterion is reached (see Blanchet et al. 2008). Note that in a few cases, the forward
+#'   selection does not select any variable even though the global model is significant. This
+#'   can happen for example when a single variable has a strong relation with the response 
+#'   variable(s), because the integration of the variable alone yields an adjusted R2
+#'   slightly higher than the global adjusted R2. In this case, we recommend checking that this
+#'   is indeed the reason why the first selected variable was rejected, and rerun the analysis
+#'   with a second stopping criterion equal to the global adjusted R2 plus a small amount
+#'   allowing avoiding this issue (e.g. 5% of the global adjusted R2). For now, this can be 
+#'   done through the argument \code{adjR2thresh} of function \code{forward.sel}, until the
+#'   solution is implemented in \code{mem.select}.
 #'
 #'   For the \code{method = "FWD"} and \code{method = "MIR"}, the MEM selected
 #'   by the procedure are returned in \code{MEM.select} and a summary of the
@@ -126,11 +135,16 @@
 #' @seealso \code{\link{listw.candidates}}, \code{\link{listw.select}},
 #'   \code{link{scores.listw}}
 #'
-#' @references
+#' @references Bauman D., Fortin M-J, Drouet T. and Dray S. (2018a) Optimizing the choice 
+#' of a spatial weighting matrix in eigenvector-based methods. Ecology
 #'
-#' Bauman D., Drouet T., Dray S. and Vleminckx J. (2018) Disentangling good from
+#' Bauman D., Drouet T., Dray S. and Vleminckx J. (2018b) Disentangling good from
 #' bad practices in the selection of spatial or phylogenetic eigenvectors.
 #' Ecography, 41, 1--12
+#' 
+#' Bauman D., Vleminckx J., Hardy O., Drouet T. (2018c) Testing and interpreting the 
+#' shared space-environment fraction in variation partitioning analyses of ecological data.
+#' Oikos
 #'
 #' Blanchet G., Legendre P. and Borcard D. (2008) Forward selection of
 #' explanatory variables. Ecology, 89(9), 2623--2632
@@ -225,18 +239,18 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
     MEM.autocor <- match.arg(MEM.autocor)
     
     if (any(is.na(x))) 
-        stop ("NA entries in x")
+        stop("NA entries in x")
     nsites <- NROW(x)
     
     MEM <- scores.listw(listw, MEM.autocor = MEM.autocor)
     
     ## alpha.global is hidden as only used internally
-    if(hasArg(ntest))
+    if (hasArg(ntest))
         ntest <- list(...)$ntest
     else
         ntest <- 1
     
-    if(MEM.autocor == "all"){
+    if (MEM.autocor == "all") {
         ntest <- ntest * 2
         res.pos <- mem.select(x = x, listw = listw, MEM.autocor = "positive", 
             method = method, MEM.all = MEM.all, nperm = nperm, nperm.global = nperm.global, alpha = alpha, ntest = ntest)
@@ -244,10 +258,10 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
             method = method, MEM.all = MEM.all, nperm = nperm, nperm.global = nperm.global, alpha = alpha, ntest = ntest)
         # combine results for positive and negative autocorrelations
         res <- list(global.test =  list(positive = res.pos$global.test, negative = res.neg$global.test))
-        if(MEM.all)
+        if (MEM.all)
             res$MEM.all <- MEM
-        if(is.null(res.neg$MEM.select)){
-            if(!is.null(res.pos$MEM.select)){
+        if (is.null(res.neg$MEM.select)) {
+            if (!is.null(res.pos$MEM.select)) {
                 res$MEM.select <- res.pos$MEM.select
                 res$summary <- res.pos$summary
             }
@@ -261,17 +275,17 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
             names(res.neg$MEM.select) <- names(MEM)[new.order]
             res.neg$summary$order <- new.order
             res.neg$summary$variables <- names(MEM)[new.order]
-            if(!is.null(res.pos$MEM.select)){
+            if (!is.null(res.pos$MEM.select)) {
                 res$MEM.select <- cbind(res.pos$MEM.select, res.neg$MEM.select)
                 res$summary <- rbind(res.pos$summary, res.neg$summary)
                 ## udpate summary in this case for the values of statistics
-                if(method == "FWD"){
+                if (method == "FWD") {
                     res$summary$R2Cum <- cumsum(res$summary$R2) 
                     res$summary$AdjR2Cum <- sapply(1:nrow(res$summary), function(x) 1 - (nsites - 1) / (nsites - x - 1) * (1 - sum(res$summary$R2[1:x])))
                 }
-                if(method == "MIR"){
+                if (method == "MIR") {
                     x2 <- x
-                    for(j in 1:ncol(res$MEM.select)){
+                    for (j in 1:ncol(res$MEM.select)) {
                         x2 <- residuals(lm(x2 ~ res$MEM.select[,j]))
                         res$summary$Iresid[j] <- moran(x2, listw, nsites, Szero(listw))$I
                     }
@@ -286,26 +300,28 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
         return(res)
     }
     
-    if(method == "MIR"){
-        if(NCOL(x) > 1) 
-            stop ("MIR can only be used for a univariate x")
+    if (method == "MIR") {
+        if (NCOL(x) > 1) 
+            stop("MIR can only be used for a univariate x")
         if (MEM.autocor == "positive")
             alter <- "greater"
         else if (MEM.autocor == "negative")
             alter <- "less"
         testI <- moran.randtest(x, listw, nperm.global, alter = alter)
         ##pvalue correction
-        testI$pvalue <- 1-(1-testI$pvalue)^ntest
+        testI$pvalue <- 1 - (1 - testI$pvalue)^ntest
         
-        if(MEM.all)
+        if (MEM.all)
             res <- list(global.test = testI, MEM.all = MEM)
         else
             res <- list(global.test = testI)
         
-        if(testI$pvalue >= alpha){
-            message(paste("No significant", MEM.autocor,  "spatial structure"))
+        if (testI$pvalue >= alpha) {
+            if (verbose) 
+                message(paste("No significant", MEM.autocor,  "spatial structure"))
             return(res)
         }       
+        
         p <- testI$pvalue
         MEM.sel <- idx.min <- min.moran <- p.vector <- c()
         while (p < alpha) {
@@ -313,7 +329,7 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
             I.vector <- apply(MEM, 2, function(z) moran(residuals(lm(x ~ z)), listw, nsites, Szero(listw))$I)
             I.vector[MEM.sel] <- NA ## MEM cannot be selected two times
             idx.min <- which.min(abs(I.vector))
-            if(verbose)
+            if (verbose)
                 message(paste("Testing variable", length(MEM.sel) + 1))
             x <- residuals(lm(x ~ MEM[, idx.min]))
             testI <- moran.randtest(x, listw, nperm, alter = alter)
@@ -324,8 +340,8 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
             p.vector <- c(p.vector, p)
         
         }
-        
-        message(paste("Procedure stopped (alpha criteria): pvalue for variable", length(MEM.sel) + 1, "is", p, "(>", alpha, ")"))
+        if (verbose)
+            message(paste("Procedure stopped (alpha criteria): pvalue for variable", length(MEM.sel) + 1, "is", p, "(>", alpha, ")"))
 
        
         res <- c(res, list(MEM.select = MEM[, MEM.sel, drop = FALSE], 
@@ -339,30 +355,33 @@ mem.select <- function(x, listw, MEM.autocor = c("positive", "negative", "all"),
         x <- as.data.frame(x)
         testF <- .testglobal(x, as.matrix(MEM), nperm.global)
         ##pvalue correction
-        testF$pvalue <- 1-(1-testF$pvalue)^ntest
+        testF$pvalue <- 1 - (1 - testF$pvalue)^ntest
         
-        if(MEM.all)
+        if (MEM.all)
             res <- list(global.test = testF, MEM.all = MEM)
         else
             res <- list(global.test = testF)
         
-        if(testF$pvalue >= alpha){
-            message(paste("No significant", MEM.autocor,  "spatial structure"))
+        if (testF$pvalue >= alpha) {
+            if (verbose)
+                message(paste("No significant", MEM.autocor,  "spatial structure"))
             return(res)
         }  
         
-        if (method == "global"){
+        if (method == "global") {
             res <- c(res, list(MEM.select = MEM))
-        } else if (method == "FWD"){
+        } else if (method == "FWD") {
             class <- class(try(fsel <- forward.sel(x, MEM, adjR2thresh = testF$obs, nperm = nperm, verbose = verbose), 
                 TRUE))
             if (class != "try-error") { 
                 res <- c(res, list(MEM.select = MEM[, fsel$order, drop = FALSE], summary = as.data.frame(fsel[, -6])))
+            } else {
+                if (verbose)
+                message("No MEM variable was selected by the forward selection. See help document of mem.select.")
             }
         }
         return(res)
     }
-    # 
 }
 
 
