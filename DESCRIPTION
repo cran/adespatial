@@ -1,7 +1,7 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-0
-Date: 2018-08-31
+Version: 0.3-2
+Date: 2018-09-26
 Author: Stéphane Dray, David Bauman, Guillaume Blanchet, Daniel Borcard, Sylvie Clappe, Guillaume Guenard,
     Thibaut Jombart, Guillaume Larocque, Pierre Legendre, Naima Madi, Helene H Wagner
 Description: Tools for the multiscale spatial analysis of multivariate data.
@@ -16,6 +16,6 @@ Encoding: UTF-8
 NeedsCompilation: yes
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr, rmarkdown, RANN, rgeos, maptools
-Packaged: 2018-08-31 21:48:15 UTC; stephane
+Packaged: 2018-09-26 08:27:24 UTC; stephane
 Repository: CRAN
-Date/Publication: 2018-08-31 22:10:03 UTC
+Date/Publication: 2018-09-27 11:10:03 UTC

@@ -1,5 +1,5 @@
-89e5fa2e7c2508c0a3c4bb65c1c7c718 *DESCRIPTION
-0e96afe804d06429559dbd9b5a938fe5 *NAMESPACE
+2e345cc851ef26ca3aa191060e8f040c *DESCRIPTION
+5e3a2b8cafa74dd5f7b52dcefba4dd8e *NAMESPACE
 94bdf730f42fc22f123f53e7c7601ef4 *R/Cperiodogram.R
 28b194a32afd0a9472ba0539c69fa4f9 *R/LCBD.comp.R
 ab7ffb1753ebe169fc6051625ad3f48c *R/WRperiodogram.R
@@ -20,7 +20,7 @@ ef2bd60987e519ceeccb280cf6999825 *R/dbmem.R
 ff78faeb593d3169f48ea65612f16279 *R/forward.sel.par.R
 d496c92a0d76f88dcb73241305272abb *R/give.thresh.R
 7a7b322db4984c59a376ca9551559109 *R/globloc.rtests.R
-7573a1ee63a42e607be5c9a34ed06bd6 *R/listw.candidates.R
+863763815a329133f4979631c689fea1 *R/listw.candidates.R
 b2516c61366d4e127d9871564ac40162 *R/listw.explore.R
 9bbdc50a5ccf9f3949f85a01ee1819b3 *R/listw.select.R
 3c898986a60f07a3642b8a5887020e8d *R/mastigouche.R
@@ -36,12 +36,14 @@ a5ae0a8d8e0ff29d39b770fcb0ce7b6c *R/msr.R
 2a41118d4b7ae87569af50ef4554fccd *R/msr.varipart.R
 37a8f3d128e9249b52479740be77a338 *R/mst.nb.R
 1b8a7e41f9ec19d87383bda0425f0844 *R/multispati.R
+e57c5b04d42544b5c57fe7475deb7722 *R/ortho.AIC.R
 3b64b529dc5471321eb746de9e22b76a *R/orthobasis.poly.R
 0db736777b4cd029d1305dc77a816f49 *R/plot.orthobasisSp.R
 cd1da0d301638d6393890b8e94b1bed1 *R/rotation.R
 648bfef6a10e388379c14a5babd22f8b *R/scalogram.R
 fb3fedf2610126c09a42bd927e975a05 *R/scores.listw.R
 3b5fe7215f8632697d10c3eed9aaca89 *R/stimodels.R
+c3ddc57d5ae8003dfa88a7192330dab1 *R/test.W.R
 26dd55b1d39d83f4344ef244a485cbef *R/trichoptera.R
 99ae8be60f6b9a1220b4449fe285b652 *R/utils-aem.R
 6ef116667e2b6e52ee58567610e99c63 *R/variogmultiv.R
@@ -51,7 +53,7 @@ c93517de9760986b7de1cc37111089e9 *data/mastigouche.rda
 a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 f3d3b7d1484269765c3a2a8b8caa2da3 *inst/doc/tutorial.R
 cfc3fc676734a885dcda1945a9bf7fcc *inst/doc/tutorial.Rmd
-74aee6715895f41ff6312b0bdd30869a *inst/doc/tutorial.html
+193cdc5cfd6e0e247aff2365e12f5a42 *inst/doc/tutorial.html
 1c1bd9ccffa16ae728b1a75e123b1d43 *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
 b3bd997f9e3f048657d2cfd6f48cd000 *man/Cperiodogram.Rd
@@ -90,11 +92,13 @@ c225654da87fad69907c21e45e846ef7 *man/moranNP.randtest.Rd
 5bb385e08935a109e82adeacd888f2aa *man/msr.varipart.Rd
 09581f26fca81d9073fe588871e8fccb *man/mst.nb.Rd
 079ce6bfd1489adcd183db43e025087d *man/multispati.Rd
+69a166da957cf953ea4d053ab0e3fb13 *man/ortho.AIC.Rd
 6dcb86f53fd4451cc26fd002045f06e1 *man/orthobasis.poly.Rd
 e2d9bc2eccef28f46036a457de8a3b8c *man/plot.orthobasisSp.Rd
 6921d19c482a99a988c5c565e74227ed *man/rotation.Rd
 30f5066eb913387d421db9b0fa0f5618 *man/scalogram.Rd
 5576d6efe0705f2bf7d2c74eef488015 *man/stimodels.Rd
+8f00abd4af3f32991027c5a6c2007915 *man/test.W.Rd
 0d531166adaff6b57af9c344b7e317d1 *man/trichoptera.Rd
 f117f4818afcbd51a257b633f2ba2312 *man/variogmultiv.Rd
 f009e46fcf131d28ea4ead122961b7bd *src/Makevars
