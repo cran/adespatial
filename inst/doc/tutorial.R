@@ -5,128 +5,89 @@ library(adegraphics)
 library(spdep)
 library(maptools)
 
-## ---- echo = -1----------------------------------------------------------
+## ------------------------------------------------------------------------
 data(mafragh)
 class(mafragh$Spatial)
-par(mar = c(0, 0, 3, 0))
-xx <- poly2nb(mafragh$Spatial)
-plot(mafragh$Spatial, border = "grey")
-plot(xx, coordinates(mafragh$Spatial), add = TRUE, pch = 20, col = "red")
-title(main="Neighborhood for polygons")
+nb.maf <- poly2nb(mafragh$Spatial)
+s.Spatial(mafragh$Spatial, nb = nb.maf, plabel.cex = 0, pnb.edge.col = 'red')
 
-## ---- echo = -1----------------------------------------------------------
-par(mar = rep(0,4))
+## ------------------------------------------------------------------------
 xygrid <- expand.grid(x = 1:10, y = 1:8)
-plot(xygrid, pch = 20, asp = 1)
+s.label(xygrid, plabel.cex = 0)
 
-## ---- echo = -1----------------------------------------------------------
-par(mar = c(0, 0, 3, 0))
+## ------------------------------------------------------------------------
+nb2.q <- cell2nb(10, 8, type = "queen")
+nb2.r <- cell2nb(10, 8, type = "rook")
+s.label(xygrid, nb = nb2.q, plabel.cex = 0, main = "Queen neighborhood")
+s.label(xygrid, nb = nb2.r, plabel.cex = 0, main = "Rook neighborhood")
 
-nb1 <- cell2nb(10, 8, type = "queen")
-
-plot(nb1, xygrid, col = "red", pch = 20)
-title(main = "Queen neighborhood")
-
-nb1
-
-## ---- echo = -1----------------------------------------------------------
-par(mar = c(0, 0, 3, 0))
-nb2 <- cell2nb(10, 8, type = "rook")
-
-plot(nb2, xygrid, col = "red", pch = 20)
-title(main = "Rook neighborhood")
-
-nb2
-
-## ---- echo = -1----------------------------------------------------------
-par(mar = c(0, 0, 3, 0))
+## ------------------------------------------------------------------------
 xytransect <- expand.grid(1:20, 1)
 nb3 <- cell2nb(20, 1)
 
-plot(nb3, xytransect, col = "red", pch = 20)
-title(main = "Transect of 20 sites")
-
 summary(nb3)
 
-## ---- echo = -1----------------------------------------------------------
-par(mar = c(0, 0, 3, 0))
+## ------------------------------------------------------------------------
 set.seed(3)
-xyir <- matrix(runif(20), 10, 2)
-plot(xyir, pch = 20, main = "Irregular sampling with 10 sites")
+xyir <- matrix(runif(40), 20, 2)
+s.label(xyir, main = "Irregular sampling with 10 sites")
 
-## ---- fig.width = 5, echo = -1-------------------------------------------
-par(mar = c(0, 0, 3, 0), mfrow = c(2, 2))
+## ---- fig.width = 5------------------------------------------------------
 nbnear1 <- dnearneigh(xyir, 0, 0.2)
-nbnear2 <- dnearneigh(xyir, 0, 0.3)
-nbnear3 <- dnearneigh(xyir, 0, 0.5)
-nbnear4 <- dnearneigh(xyir, 0, 1.5)
+nbnear2 <- dnearneigh(xyir, 0, 1.5)
 
-plot(nbnear1, xyir, col = "red", pch = 20)
-title(main = "neighbors if 0<d<0.2")
-plot(nbnear2, xyir, col = "red", pch = 20)
-title(main = "neighbors if 0<d<0.3")
-plot(nbnear3, xyir, col = "red", pch = 20)
-title(main = "neighbors if 0<d<0.5")
-plot(nbnear4, xyir, col = "red", pch = 20)
-title(main = "neighbors if 0<d<1.5")
+g1 <- s.label(xyir, nb = nbnear1, pnb.edge.col = "red", main = "neighbors if 0<d<0.2", plot = FALSE)
+g2 <- s.label(xyir, nb = nbnear2, pnb.edge.col = "red", main = "neighbors if 0<d<1.5", plot = FALSE)
+cbindADEg(g1, g2, plot = TRUE)
 
 ## ------------------------------------------------------------------------
 nbnear1
 
 ## ------------------------------------------------------------------------
-nbnear4
+nbnear2
 
-## ---- fig.width = 5, echo = -1-------------------------------------------
-par(mar = c(0, 0, 3, 0), mfrow = c(1, 2))
+## ---- fig.width = 5------------------------------------------------------
 knn1 <- knearneigh(xyir, k = 1)
 nbknn1 <- knn2nb(knn1, sym = TRUE)
 knn2 <- knearneigh(xyir, k = 2)
 nbknn2 <- knn2nb(knn2, sym = TRUE)
 
-plot(nbknn1, xyir, col = "red", pch = 20)
-title(main = "Nearest neighbors (k=1)")
-plot(nbknn2, xyir, col = "red", pch = 20)
-title(main="Nearest neighbors (k=2)")
+g1 <- s.label(xyir, nb = nbknn1, pnb.edge.col = "red", main = "Nearest neighbors (k=1)", plot = FALSE)
+g2 <- s.label(xyir, nb = nbknn2, pnb.edge.col = "red", main = "Nearest neighbors (k=2)", plot = FALSE)
+cbindADEg(g1, g2, plot = TRUE)
 
 ## ------------------------------------------------------------------------
 n.comp.nb(nbknn1)
-n.comp.nb(nbknn2)
 
-## ---- fig.width = 5, echo = -1-------------------------------------------
-par(mar = c(0, 0, 3, 0), mfrow = c(2, 2))
+## ---- fig.width = 5------------------------------------------------------
 nbtri <- tri2nb(xyir)
 nbgab <- graph2nb(gabrielneigh(xyir), sym = TRUE)
 nbrel <- graph2nb(relativeneigh(xyir), sym = TRUE)
 nbsoi <- graph2nb(soi.graph(nbtri, xyir), sym = TRUE)
 
-plot(nbtri, xyir, col = "red", pch = 20)
-title(main="Delaunay triangulation")
-plot(nbgab, xyir, col = "red", pch = 20)
-title(main = "Gabriel Graph")
-plot(nbrel, xyir, col = "red", pch = 20)
-title(main = "Relative Neighbor Graph")
-plot(nbsoi, xyir, col = "red", pch = 20)
-title(main = "Sphere of Influence Graph")
+g1 <- s.label(xyir, nb = nbtri, pnb.edge.col = "red", main = "Delaunay", plot = FALSE)
+g2 <- s.label(xyir, nb = nbgab, pnb.edge.col = "red", main = "Gabriel", plot = FALSE)
+g3 <- s.label(xyir, nb = nbrel, pnb.edge.col = "red", main = "Relative", plot = FALSE)
+g4 <- s.label(xyir, nb = nbsoi, pnb.edge.col = "red", main = "Sphere of influence", plot = FALSE)
+
+ADEgS(list(g1, g2, g3, g4))
 
 ## ------------------------------------------------------------------------
 nbgab[[1]]
 
 ## ------------------------------------------------------------------------
-diffnb(nbsoi,nbrel)
-
-## ------------------------------------------------------------------------
-str(nbsoi)
-str(include.self(nbsoi))
+diffnb(nbsoi, nbrel)
 
 ## ------------------------------------------------------------------------
 nb2listw(nbgab)
 
 ## ------------------------------------------------------------------------
 distgab <- nbdists(nbgab, xyir)
-str(distgab)
+nbgab[[1]]
+distgab[[1]]
 
 ## ------------------------------------------------------------------------
-fdist <- lapply(distgab, function(x) 1-x/max(dist(xyir)))
+fdist <- lapply(distgab, function(x) 1 - x/max(dist(xyir)))
 
 ## ------------------------------------------------------------------------
 listwgab <- nb2listw(nbgab, glist = fdist, style = "B")
@@ -136,7 +97,7 @@ listwgab$neighbours[[1]]
 listwgab$weights[[1]]
 
 ## ------------------------------------------------------------------------
-print(listw2mat(listwgab),digits=3)
+print(listw2mat(listwgab)[1:10, 1:10], digits = 3)
 
 ## ------------------------------------------------------------------------
 mem.gab <- mem(listwgab)
@@ -164,7 +125,7 @@ moranI
 attr(mem.gab, "values") / moranI$obs
 
 ## ---- fig.width = 5, fig.height = 5/3------------------------------------
-signi <- which(moranI$p < 0.05)
+signi <- which(moranI$pvalue < 0.05)
 signi
 plot(mem.gab[,signi], SpORcoords = xyir, nb = nbgab)
 
