@@ -1,3 +1,6 @@
+## ----setup, include=FALSE------------------------------------------------
+knitr::opts_chunk$set(fig.align = "center")
+
 ## ------------------------------------------------------------------------
 library(adespatial)
 library(ade4)
@@ -16,8 +19,8 @@ xygrid <- expand.grid(x = 1:10, y = 1:8)
 s.label(xygrid, plabel.cex = 0)
 
 ## ------------------------------------------------------------------------
-nb2.q <- cell2nb(10, 8, type = "queen")
-nb2.r <- cell2nb(10, 8, type = "rook")
+nb2.q <- cell2nb(8, 10, type = "queen")
+nb2.r <- cell2nb(8, 10, type = "rook")
 s.label(xygrid, nb = nb2.q, plabel.cex = 0, main = "Queen neighborhood")
 s.label(xygrid, nb = nb2.r, plabel.cex = 0, main = "Rook neighborhood")
 
@@ -59,7 +62,7 @@ cbindADEg(g1, g2, plot = TRUE)
 ## ------------------------------------------------------------------------
 n.comp.nb(nbknn1)
 
-## ---- fig.width = 5------------------------------------------------------
+## ------------------------------------------------------------------------
 nbtri <- tri2nb(xyir)
 nbgab <- graph2nb(gabrielneigh(xyir), sym = TRUE)
 nbrel <- graph2nb(relativeneigh(xyir), sym = TRUE)
@@ -124,8 +127,45 @@ moranI
 ## ------------------------------------------------------------------------
 attr(mem.gab, "values") / moranI$obs
 
-## ---- fig.width = 5, fig.height = 5/3------------------------------------
+## ---- fig.width = 6, fig.height = 4--------------------------------------
 signi <- which(moranI$pvalue < 0.05)
 signi
 plot(mem.gab[,signi], SpORcoords = xyir, nb = nbgab)
+
+## ------------------------------------------------------------------------
+data("mafragh")
+class(mafragh)
+names(mafragh)
+dim(mafragh$flo)
+
+## ------------------------------------------------------------------------
+str(mafragh$env)
+
+## ---- fig.height = 4, fig.width = 4--------------------------------------
+s.label(mafragh$xy, plabel.cex = 0, ppoint.pch = 15, ppoint.col = "darkseagreen4", Sp = mafragh$Spatial)
+
+## ------------------------------------------------------------------------
+mafragh$spenames[c(1, 11), ]
+
+## ---- fig.height=3, fig.width=6------------------------------------------
+fpalette <- colorRampPalette(c("white", "darkseagreen2", "darkseagreen3", "palegreen4"))
+sp.flo <- SpatialPolygonsDataFrame(Sr = mafragh$Spatial, data = mafragh$flo, match.ID = FALSE)
+s.Spatial(sp.flo[,c(1, 11)], col = fpalette(3), nclass = 3)
+
+## ------------------------------------------------------------------------
+lw <- nb2listw(mafragh$nb)
+
+## ---- fig.height=6, fig.width=8, out.width="80%"-------------------------
+sp.env <- SpatialPolygonsDataFrame(Sr = mafragh$Spatial, data = mafragh$env, match.ID = FALSE)
+maps.env <- s.Spatial(sp.env, col = fpalette(4), nclass = 4)
+MC.env <- moran.randtest(mafragh$env, lw, nrepet = 999)
+MC.env
+
+## ------------------------------------------------------------------------
+mc.bounds <- moran.bounds(lw)
+mc.bounds
+
+## ---- fig = TRUE---------------------------------------------------------
+env.maps <- s1d.barchart(MC.env$obs, labels = MC.env$names, plot = FALSE, ylim = 1.1 * mc.bounds, p1d.hori = FALSE)
+addline(env.maps, h = mc.bounds, plot = TRUE, pline.col = 'red', pline.lty = 3)
 
