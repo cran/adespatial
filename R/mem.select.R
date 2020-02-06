@@ -22,7 +22,7 @@
 #'   "negative", or "all", for positively, negatively autocorrelated
 #'   eigenvectors, or both, respectively; default is "positive"
 #' @param method Criterion to select the best subset of MEM variables. Either
-#'   \code{forward} (default option), \code{"MIR"} (for univariate \code{x}
+#'   \code{"FWD"} (default option), \code{"MIR"} (for univariate \code{x}
 #'   only), or \code{"global"} (see \code{Details})
 #' @param MEM.all A logical indicating if the complete set of MEM variables
 #'   should be returned
@@ -133,7 +133,7 @@
 #'   \email{davbauman@@gmail.com}) and Stéphane Dray
 #'
 #' @seealso \code{\link{listw.candidates}}, \code{\link{listw.select}},
-#'   \code{link{scores.listw}}
+#'   \code{\link{scores.listw}}
 #'
 #' @references Bauman D., Fortin M-J, Drouet T. and Dray S. (2018a) Optimizing the choice 
 #' of a spatial weighting matrix in eigenvector-based methods. Ecology, 99, 2159-2166

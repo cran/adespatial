@@ -26,7 +26,7 @@ performed in this case (see \code{Example})}
 eigenvectors, or both, respectively; default is "positive"}
 
 \item{method}{Criterion to select the best subset of MEM variables. Either
-\code{forward} (default option), \code{"MIR"} (for univariate \code{x}
+\code{"FWD"} (default option), \code{"MIR"} (for univariate \code{x}
 only), or \code{"global"} (see \code{Details})}
 
 \item{MEM.all}{A logical indicating if the complete set of MEM variables
@@ -242,7 +242,7 @@ in Ecology and Evolution, 6, 1169--1178
 }
 \seealso{
 \code{\link{listw.candidates}}, \code{\link{listw.select}},
-  \code{link{scores.listw}}
+  \code{\link{scores.listw}}
 }
 \author{
 David Bauman (\email{dbauman@ulb.ac.be} or
