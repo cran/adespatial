@@ -1,4 +1,4 @@
-b62bb34cc8095114bdde7ffc7f871953 *DESCRIPTION
+08ed3842f1040ca4a6dbc97f29714815 *DESCRIPTION
 adb89b0dab4dfe28e7e57d359ac0204d *NAMESPACE
 073255bd0fb311ab6ec551387e73a6bd *R/Cperiodogram.R
 28b194a32afd0a9472ba0539c69fa4f9 *R/LCBD.comp.R
@@ -56,7 +56,7 @@ cabb29b7e01c325be33ba5b971cdc119 *R/tpaired.randtest.R
 26dd55b1d39d83f4344ef244a485cbef *R/trichoptera.R
 99ae8be60f6b9a1220b4449fe285b652 *R/utils-aem.R
 6ef116667e2b6e52ee58567610e99c63 *R/variogmultiv.R
-1a47c63093518a9959281bd2814aef21 *build/vignette.rds
+6aa5dc9b2e45b70e3d37b855ecff024a *build/vignette.rds
 f667155d33538c35eacdbdb01b35434a *data/ScotchWhiskey.rda
 b5502fbf86d1e378537289b229d7b643 *data/Tiahura.rda
 4352f68bce08aaa44f5d1f30209e238e *data/bacProdxy.rda
@@ -64,7 +64,7 @@ c93517de9760986b7de1cc37111089e9 *data/mastigouche.rda
 a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 66e54f7255abde982ba9a26427425337 *inst/doc/tutorial.R
 f53723bd67b84f5dc922ed70c9cfb19d *inst/doc/tutorial.Rmd
-fdcef27e4a4d285faee858e300ed61c1 *inst/doc/tutorial.html
+97e7ed41ad3a81408a6476de29cf0737 *inst/doc/tutorial.html
 1c1bd9ccffa16ae728b1a75e123b1d43 *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
 1d20c03d7ff0e754035158b485e96087 *man/Cperiodogram.Rd
@@ -129,10 +129,10 @@ a6dd4766357f1ab5c567a1e055ec6b48 *src/adesub.c
 400d0df1150ff52c04153bfa8fcd09b7 *src/adesub.h
 3a7bf689cd4c9fec738769bfbfecde15 *src/betadiv.c
 4bf0ad40cbbe8f9394ea74ef4b26af8f *src/buildbinary.c
-693549f675cf074b57c0f8bb06e0b7ed *src/constr.hclust.c
-0c78db8df97c65c7cf9c0912dcff9935 *src/constr.hclust.h
+3ef9b3f22b3005d0183a34ef466c6455 *src/constr.hclust.c
+6d442249c65dd655a52f6a36202b537b *src/constr.hclust.h
 f944f481d16e5b78a0b5a92fccba1df2 *src/forward.c
-077cc14af1d7faa1a4ac44644bd77b9b *src/init.c
+38ca37c1742d40035d9d21ae4d2480bf *src/init.c
 aadf9728fa919afc32081d47fbcf4355 *src/stipermute.c
 376210fc8b47511406ac34b87644b73b *src/testsmoran.c
 ab0b6474dd8b1591bdd3d60f8d3ff406 *vignettes/adespatial.bib
