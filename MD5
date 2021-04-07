@@ -1,7 +1,7 @@
-08ed3842f1040ca4a6dbc97f29714815 *DESCRIPTION
+98a3c90c5e8c3bec09b59c974407c0af *DESCRIPTION
 adb89b0dab4dfe28e7e57d359ac0204d *NAMESPACE
 073255bd0fb311ab6ec551387e73a6bd *R/Cperiodogram.R
-28b194a32afd0a9472ba0539c69fa4f9 *R/LCBD.comp.R
+7f573eaf9e48eb036c4d300034d192ab *R/LCBD.comp.R
 d6d0c9e52d351c227a88179ac88bda6a *R/ScotchWhiskey.R
 fc2eae8fea7e607f0077617a76c04709 *R/TBI.R
 8d169993910be0cb8b4972025f1f5b7c *R/Tiahura.R
@@ -24,7 +24,7 @@ bb83be16b3d30642dedf2c544fd3846b *R/chooseCN.R
 690bbd28cd710abe87ce576122398392 *R/forward.sel.R
 ff78faeb593d3169f48ea65612f16279 *R/forward.sel.par.R
 d496c92a0d76f88dcb73241305272abb *R/give.thresh.R
-7a7b322db4984c59a376ca9551559109 *R/globloc.rtests.R
+a7faebba0a9656535829e9b495130697 *R/globloc.rtests.R
 863763815a329133f4979631c689fea1 *R/listw.candidates.R
 b2516c61366d4e127d9871564ac40162 *R/listw.explore.R
 92a002607c3f38200db667e99d9620dd *R/listw.select.R
@@ -62,9 +62,9 @@ b5502fbf86d1e378537289b229d7b643 *data/Tiahura.rda
 4352f68bce08aaa44f5d1f30209e238e *data/bacProdxy.rda
 c93517de9760986b7de1cc37111089e9 *data/mastigouche.rda
 a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
-66e54f7255abde982ba9a26427425337 *inst/doc/tutorial.R
-f53723bd67b84f5dc922ed70c9cfb19d *inst/doc/tutorial.Rmd
-97e7ed41ad3a81408a6476de29cf0737 *inst/doc/tutorial.html
+6b8ae64e9293c279676b68e4a301de18 *inst/doc/tutorial.R
+5c43f02f6f83c2297f018aabd0f35058 *inst/doc/tutorial.Rmd
+ca614d4ed1cba9be8348ef8d148f2bd6 *inst/doc/tutorial.html
 1c1bd9ccffa16ae728b1a75e123b1d43 *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
 1d20c03d7ff0e754035158b485e96087 *man/Cperiodogram.Rd
@@ -87,7 +87,7 @@ ccafe17f2761a70f42f5f16aa54457f1 *man/create.dbMEM.model.Rd
 7209493755860ba7e4ceb6f090a0be20 *man/dbmem.Rd
 1247bf4b98c4ca7aa850068da4903580 *man/dist.ldc.Rd
 2d3afd50269c305608842454c7c9d100 *man/envspace.test.Rd
-4d088fa55d7fb5a04a7cff4c469e3a96 *man/figures/logo.png
+51574510d8eaf3b8a855c6ae51aa4337 *man/figures/logo.svg
 85e71618fa4f465f94bfe1afa5f0a0b5 *man/forward.sel.Rd
 cebff991fa9dbe3a141be936cd23dc44 *man/forward.sel.par.Rd
 6e00c236a95e72cce4dc98494272c2cd *man/give.thresh.Rd
@@ -138,4 +138,4 @@ aadf9728fa919afc32081d47fbcf4355 *src/stipermute.c
 ab0b6474dd8b1591bdd3d60f8d3ff406 *vignettes/adespatial.bib
 239430bfbdb80088150801aa4390be7c *vignettes/adespatial.png
 e513582509773f80f6365d632601ae71 *vignettes/listw_explore.png
-f53723bd67b84f5dc922ed70c9cfb19d *vignettes/tutorial.Rmd
+5c43f02f6f83c2297f018aabd0f35058 *vignettes/tutorial.Rmd

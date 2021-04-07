@@ -88,20 +88,19 @@ n.comp.nb(nbknn1)
 nbtri <- tri2nb(xyir)
 nbgab <- graph2nb(gabrielneigh(xyir), sym = TRUE)
 nbrel <- graph2nb(relativeneigh(xyir), sym = TRUE)
-nbsoi <- graph2nb(soi.graph(nbtri, xyir), sym = TRUE)
 
 g1 <- s.label(xyir, nb = nbtri, pnb.edge.col = "red", main = "Delaunay", plot = FALSE)
 g2 <- s.label(xyir, nb = nbgab, pnb.edge.col = "red", main = "Gabriel", plot = FALSE)
 g3 <- s.label(xyir, nb = nbrel, pnb.edge.col = "red", main = "Relative", plot = FALSE)
-g4 <- s.label(xyir, nb = nbsoi, pnb.edge.col = "red", main = "Sphere of influence", plot = FALSE)
 
-ADEgS(list(g1, g2, g3, g4))
+ADEgS(list(g1, g2, g3))    
+  
 
 ## -----------------------------------------------------------------------------
 nbgab[[1]]
 
 ## -----------------------------------------------------------------------------
-diffnb(nbsoi, nbrel)
+diffnb(nbgab, nbrel)
 
 ## -----------------------------------------------------------------------------
 nbgab <- graph2nb(gabrielneigh(mxy), sym = TRUE)
