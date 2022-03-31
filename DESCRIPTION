@@ -1,7 +1,7 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-14
-Date: 2021-04-06
+Version: 0.3-16
+Date: 2022-03-31
 Author: Stéphane Dray, David Bauman, Guillaume Blanchet, Daniel Borcard,
     Sylvie Clappe, Guillaume Guenard, Thibaut Jombart, Guillaume Larocque,
     Pierre Legendre, Naima Madi, Helene H Wagner
@@ -19,8 +19,8 @@ URL: https://github.com/sdray/adespatial
 BugReports: https://github.com/sdray/adespatial/issues
 Encoding: UTF-8
 NeedsCompilation: yes
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 VignetteBuilder: knitr
-Packaged: 2021-04-06 16:58:32 UTC; stephane
+Packaged: 2022-03-31 15:13:14 UTC; stephane
 Repository: CRAN
-Date/Publication: 2021-04-07 08:50:07 UTC
+Date/Publication: 2022-03-31 23:00:02 UTC
