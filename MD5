@@ -1,4 +1,4 @@
-4e7fe0c0cc336702fe51b925a5ee7775 *DESCRIPTION
+e80b31b7b2cc0362830cc527a6d77621 *DESCRIPTION
 d25cd59cc5e3819064b6adecdb825990 *NAMESPACE
 073255bd0fb311ab6ec551387e73a6bd *R/Cperiodogram.R
 7f573eaf9e48eb036c4d300034d192ab *R/LCBD.comp.R
@@ -41,7 +41,7 @@ dde044d95e0f32cac4c0592aa6760798 *R/msr.4thcorner.R
 4e070a0955afd69db605bf8161278189 *R/msr.mantelrtest.R
 9c0749bad199c32bb61b3232ed715dd7 *R/msr.varipart.R
 37a8f3d128e9249b52479740be77a338 *R/mst.nb.R
-1fe3b2f8b64691cd5213e526163269be *R/multispati.R
+93b2a2c7dd2490c5eff4152173652605 *R/multispati.R
 d45a5172d0f0393c8f99df66a29fcd44 *R/ortho.AIC.R
 3b64b529dc5471321eb746de9e22b76a *R/orthobasis.poly.R
 344301598b593a05cbb335c17c310971 *R/plot.TBI.R
@@ -57,8 +57,8 @@ cabb29b7e01c325be33ba5b971cdc119 *R/tpaired.randtest.R
 45e682816085ec73600a0e3b128c134c *R/trichoptera.R
 99ae8be60f6b9a1220b4449fe285b652 *R/utils-aem.R
 6ef116667e2b6e52ee58567610e99c63 *R/variogmultiv.R
-46e8073a130459ee9bf717473f8c2dc1 *build/partial.rdb
-45c539aa0b2cb379eda815df38b5091e *build/vignette.rds
+0c6ad5b3446721162c89589e8077ab1c *build/partial.rdb
+ba9472fc02acd67e7de90c04a5c8e5a4 *build/vignette.rds
 f667155d33538c35eacdbdb01b35434a *data/ScotchWhiskey.rda
 b5502fbf86d1e378537289b229d7b643 *data/Tiahura.rda
 4352f68bce08aaa44f5d1f30209e238e *data/bacProdxy.rda
@@ -66,7 +66,7 @@ c93517de9760986b7de1cc37111089e9 *data/mastigouche.rda
 a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 6b8ae64e9293c279676b68e4a301de18 *inst/doc/tutorial.R
 5c43f02f6f83c2297f018aabd0f35058 *inst/doc/tutorial.Rmd
-310bbcba4b61f0022d073562fd3809a9 *inst/doc/tutorial.html
+987078d270adc153eb77a25645604ef7 *inst/doc/tutorial.html
 1c1bd9ccffa16ae728b1a75e123b1d43 *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
 1d20c03d7ff0e754035158b485e96087 *man/Cperiodogram.Rd
@@ -78,7 +78,7 @@ c2efa3ac49a1ef146e9bcadf865dfa1a *man/Tiahura.Rd
 8cf5752ee427398f08a4bc3de8014749 *man/aem.Rd
 ff86c1767565397005833f15c67e2296 *man/aem.build.binary.Rd
 f4c2c27ba913505bcba52c5d6c344c97 *man/aem.time.Rd
-39fcc0abbbb9325f155ac2c8e35d022b *man/aem.weight.edges.Rd
+29f5254260c78a04eefe0792203bb57f *man/aem.weight.edges.Rd
 29901f90bf6f8dba31aa6c7f6ac72c72 *man/bacProdxy.Rd
 f86487f6876d23834e93912a1990dce3 *man/beta.div.Rd
 9a0f7d7556892e00d46a08fd41f7c04e *man/beta.div.comp.Rd
@@ -111,7 +111,7 @@ c801778639e08bc651ab0d1398d1a6ea *man/msr.Rd
 f88b77b49c24bb1941eae7ccd30df097 *man/msr.mantelrtest.Rd
 06e7e74f65b6f320d755d33d07160650 *man/msr.varipart.Rd
 09581f26fca81d9073fe588871e8fccb *man/mst.nb.Rd
-97d4fd6ddf1da8496b1dd60d2cb122cb *man/multispati.Rd
+c1ef212ddd239e22eaf3cab59a707aa7 *man/multispati.Rd
 2432507c158bd12247cec03933eb1836 *man/ortho.AIC.Rd
 889c595fefa28f17a2b258cd39bfd865 *man/orthobasis.poly.Rd
 31bb3652de3333578d944917aa7a14ac *man/plot.TBI.Rd
