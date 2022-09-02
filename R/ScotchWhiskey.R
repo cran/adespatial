@@ -1,3 +1,12 @@
+## **************************************************************************
+##
+##    (c) 2018-2022 Guillaume Guénard
+##        Department de sciences biologiques
+##        Université de Montréal
+##        Montreal, QC, Canada
+##
+## **************************************************************************
+##
 #' Scotch Whiskey Data Set
 #'
 #' Single Malt Scotch whiskeys from 109 distilleries
@@ -64,7 +73,9 @@
 #' 
 #' Legendre, P. and Legendre, L. 2012. Numerical Ecology. 3rd English edition.
 #' Elsevier Science BV, Amsterdam.
-#'
+#' 
+#' @importFrom sp SpatialPointsDataFrame SpatialLinesDataFrame
+#' 
 #' @examples data(ScotchWhiskey)
 #' lapply(ScotchWhiskey,ncol)
 #' ScotchWhiskey$nbChar
