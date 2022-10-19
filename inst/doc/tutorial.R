@@ -6,7 +6,6 @@ library(ade4)
 library(adespatial)
 library(adegraphics)
 library(spdep)
-library(maptools)
 
 ## -----------------------------------------------------------------------------
 data("mafragh")
