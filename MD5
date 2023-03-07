@@ -1,4 +1,4 @@
-4a97b804c1e193230df04348b3cb526c *DESCRIPTION
+609a46015701dd0fd221959b6c29999c *DESCRIPTION
 22ef89eca490f2c32b9bb909bbda4865 *NAMESPACE
 073255bd0fb311ab6ec551387e73a6bd *R/Cperiodogram.R
 7f573eaf9e48eb036c4d300034d192ab *R/LCBD.comp.R
@@ -65,9 +65,9 @@ b5502fbf86d1e378537289b229d7b643 *data/Tiahura.rda
 c93517de9760986b7de1cc37111089e9 *data/mastigouche.rda
 a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 35e242982e99903538341e90899a3a88 *inst/CITATION
-12be8ef93ee9d096cb3a4e352f7cde78 *inst/doc/tutorial.R
-4b54d5b39529e0ca159703106a744ddc *inst/doc/tutorial.Rmd
-2666866fb40b24062d152b6a58d459e0 *inst/doc/tutorial.html
+03eeb029c6be3dedc61982a779df2352 *inst/doc/tutorial.R
+41f5df1c4d5526707b905e7fa4134053 *inst/doc/tutorial.Rmd
+98104f0b5996199e497a6318d7d0566c *inst/doc/tutorial.html
 1085d317837dcd79be32f45cc7cc235a *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
 1d20c03d7ff0e754035158b485e96087 *man/Cperiodogram.Rd
@@ -142,4 +142,4 @@ bd3a429ca9b3ab18585f69ba617dfb80 *src/stipermute.c
 ab0b6474dd8b1591bdd3d60f8d3ff406 *vignettes/adespatial.bib
 239430bfbdb80088150801aa4390be7c *vignettes/adespatial.png
 e513582509773f80f6365d632601ae71 *vignettes/listw_explore.png
-4b54d5b39529e0ca159703106a744ddc *vignettes/tutorial.Rmd
+41f5df1c4d5526707b905e7fa4134053 *vignettes/tutorial.Rmd
