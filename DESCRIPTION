@@ -1,26 +1,49 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-21
-Date: 2023-03-07
-Author: Stéphane Dray, David Bauman, Guillaume Blanchet, Daniel Borcard,
-    Sylvie Clappe, Guillaume Guenard, Thibaut Jombart, Guillaume Larocque,
-    Pierre Legendre, Naima Madi, Helene H Wagner
+Version: 0.3-22
+Authors@R: c(
+   person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
+   person("David", "Bauman", role = "ctb"),
+   person("Guillaume", "Blanchet", role = "ctb"),
+   person("Daniel", "Borcard", role = "ctb"),
+   person("Sylvie", "Clappe", role = "ctb"),
+   person("Guillaume", "Guenard", role = "ctb"),
+   person("Thibaut", "Jombart", role = "ctb"),
+   person("Guillaume", "Larocque", role = "ctb"),
+   person("Pierre", "Legendre", role = "ctb"),
+   person("Naima", "Madi", role = "ctb"),
+   person("Hélène H", "Wagner", role = "ctb"),
+   person("Aurélie", "Siberchicot", role = c("ctb", "cre"), email = "aurelie.siberchicot@univ-lyon1.fr", comment = c(ORCID = "0000-0002-7638-8318"))
+	)
 Description: Tools for the multiscale spatial analysis of multivariate data.
     Several methods are based on the use of a spatial weighting matrix and its
     eigenvector decomposition (Moran's Eigenvectors Maps, MEM). 
     Several approaches are described in the review Dray et al (2012)
     <doi:10.1890/11-1183.1>.
-Maintainer: Stéphane Dray <stephane.dray@univ-lyon1.fr>
 Imports: ade4 (>= 1.7-13), adegraphics, adephylo, sp, spdep, lattice,
         methods, grDevices, graphics, MASS, stats, utils, shiny, vegan
-Suggests: knitr, rgeos, ape, rmarkdown
+Suggests: knitr, rgeos, ape, rmarkdown, betapart
 License: GPL (>= 2)
 URL: https://github.com/sdray/adespatial
 BugReports: https://github.com/sdray/adespatial/issues
 Encoding: UTF-8
 NeedsCompilation: yes
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr
-Packaged: 2023-03-07 16:12:42 UTC; stephane
+Packaged: 2023-10-06 18:23:47 UTC; siberchicot
+Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
+  David Bauman [ctb],
+  Guillaume Blanchet [ctb],
+  Daniel Borcard [ctb],
+  Sylvie Clappe [ctb],
+  Guillaume Guenard [ctb],
+  Thibaut Jombart [ctb],
+  Guillaume Larocque [ctb],
+  Pierre Legendre [ctb],
+  Naima Madi [ctb],
+  Hélène H Wagner [ctb],
+  Aurélie Siberchicot [ctb, cre]
+    (<https://orcid.org/0000-0002-7638-8318>)
+Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2023-03-07 16:50:05 UTC
+Date/Publication: 2023-10-12 11:20:03 UTC

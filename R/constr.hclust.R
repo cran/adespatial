@@ -138,7 +138,6 @@
 #' contemporary common sense as to what sample sizes represent manageable
 #' clustering problems. Computation time grows with N at roughly the same speed
 #' as memory storage requirement to store the dissimilarity matrices increases. 
-#' See the Benchmarking example below.
 #' 
 #' With large data sets, a manageable output describing the classification of
 #' the sites is obtained with function \code{\link{cutree}}(x, k) where k is the
@@ -277,7 +276,7 @@
 #' ## A fonction to plot the Whiskey clustering results:
 #' 
 #' plotWhiskey <- function(wh, k) {
-#'    par(fig=c(0,1,0,1))
+#'    oldpar <- par(fig=c(0,1,0,1))
 #'    plot(grpWD2cst_ScotchWhiskey[[wh]], k=k, links=TRUE, las=1,
 #'         xlab="Eastings (km)", ylab="Northings (km)", cex=0.1, lwd=3,
 #'         main=sprintf("Feature: %s",wh))
@@ -294,6 +293,7 @@
 #'    text(ScotchWhiskey$geo@coords/1000,labels=1:length(ScotchWhiskey$geo))
 #'    rect(xleft=SpeyZoom$xlim[1L], ybottom=SpeyZoom$ylim[1L],
 #'         xright=SpeyZoom$xlim[2L], ytop=SpeyZoom$ylim[2L], lwd=2, lty=1L)
+#'    par(oldpar)
 #' }
 #' 
 #' ## Plot the clustering results on the map of Scotland for 5 groups.
@@ -306,14 +306,13 @@
 #' 
 #' ## End of the Scotch Whiskey tasting data example
 #' 
-#' \dontrun{
+#' \donttest{
 #' 
 #' ## Third example: Fish community composition along the Doubs River,
 #' ## France. The sequence is analyzed as a case of chronological
 #' ## clustering, substituting space for time.
 #' 
-#' library(ade4)
-#' library(adespatial)
+#' if(require("ade4", quietly = TRUE)){
 #' data(doubs, package="ade4")
 #' Doubs.D <- dist.ldc(doubs$fish, method="hellinger")
 #' grpWD2cst_fish <- constr.hclust(Doubs.D, method="ward.D2", chron=TRUE,
@@ -349,12 +348,13 @@
 #'         coords=ex.xy      # File of geographic coordinates
 #'     )
 #' 
-#' par(mfrow=c(1,2))
+#' oldpar <- par(mfrow=c(1,2))
 #' ## Plot the map of the results for k = 3
 #' plot(test.out, k=3)
 #' ## Plot the dendrogram
 #' stats:::plot.hclust(test.out, hang=-1)
-#' 
+#' par(oldpar)
+#' }
 #'
 #' ## Same example modified: disjoint clusters
 #' ## Same ex.Y and ex.xy as in the previous example
@@ -381,73 +381,16 @@
 #'     )
 #' cutree(test.out2, k=2)
 #' 
-#' par(mfrow=c(1,2))
+#' oldpar <- par(mfrow=c(1,2))
 #' ## Plot the map of the results for k = 3
 #' plot(test.out2, k=3)
 #' ## Plot the dendrogram showing the disconnected groups
 #' stats:::plot.hclust(test.out2, hang=-1)
 #' axis(2,at=0:ceiling(max(test.out2$height,na.rm=TRUE)))
+#' par(oldpar)
 #' 
 #' ## End of the disjoint clusters example
 #' 
-#' ## Benchmarking example
-#' ## Benchmarking can be used to estimate computation time for different
-#' ## values of N. 
-#' ## Computing time grows with N at roughly the same speed as the memory
-#' ## storage requirements to store the dissimilarity matrices.
-#' 
-#' require(magrittr)
-#' require(pryr)
-#' 
-#' benchmark <- function(nobj) {
-#'     # Argument -
-#'     # nobj : Number of objects in simulation runs
-#'     res <- matrix(NA,length(nobj),3) %>% as.data.frame
-#'     colnames(res) <- c("N.objects","Storage (MiB)","Time (sec)")
-#'     res[,1L] <- nobj
-#'     ## resources <- list()
-#'     for(i in 1:length(nobj)) { 
-#'         N <- nobj[i]
-#'         coords.mem <- cbind(x=runif(N,-1,1),y=runif(N,-1,1))
-#'         dat.mem <- runif(N,0,1)
-#'         if(i>1L) rm(D.mem) ; gc()
-#'         D.mem <- try(dat.mem %>% dist)  #; gc()
-#'         if(any(class(D.mem)=="try-error"))
-#'             break
-#'         neighbors.mem <-
-#'             (coords.mem %>%
-#'                  tri2nb %>%
-#'                  nb2listw(style="B") %>%
-#'                  listw2sn)[,1:2]
-#'         {start.time = Sys.time()
-#'             res.mem <- try(constr.hclust(D.mem, method="ward.D2",
-#'                                          neighbors.mem))
-#'             end.time = Sys.time()}
-#'         if(any(class(res.mem)=="try-error"))
-#'             break
-#'         res[i,2L] <- (2*object_size(D.mem) + object_size(neighbors.mem) +
-#'                           object_size(res.mem))/1048576  # n. bytes per MiB
-#'         res[i,3L] <- end.time-start.time
-#'     }
-#'     res[["N.objects"]] <- as.integer(res[["N.objects"]])
-#'     res
-#' }
-#' res <- benchmark(nobj=c(1000,2000,5000,10000,20000,50000,100000))
-#' 
-#' ## Plotting the results:
-#' ok <- res %>% apply(1L, function(x) !x %>% is.na %>% any)
-#' par(mar=c(3,6,2,2),mfrow=c(2L,1L))
-#' barplot(height = res[ok,"Time (sec)"], names.arg= res[ok,"N.objects"],
-#'         ylab="Time (seconds)\n",xlab="",las=1L,log="y")
-#' par(mar=c(5,6,0,2))
-#' barplot(height = res[ok,"Storage (MiB)"], names.arg= res[ok,"N.objects"],
-#'         ylab="Total storage (MB)\n",xlab="Number of observations",
-#'         las=1L,log="y")
-#' 
-#' ## Examine the output file
-#' res
-#' 
-#' ## End of the benchmarking example
 #' }
 #' ## End of examples
 #' 

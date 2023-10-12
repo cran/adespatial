@@ -135,9 +135,10 @@ class(mem.gab)
 names(attributes(mem.gab))
 
 ## ---- echo = -1---------------------------------------------------------------
-par(mar = c(0, 2, 3, 0))
+oldpar <- par(mar = c(0, 2, 3, 0))
     barplot(attr(mem.gab, "values"), 
         main = "Eigenvalues of the spatial weighting matrix", cex.main = 0.7)
+par(oldpar)
 
 ## ---- eval = FALSE------------------------------------------------------------
 #  plot(mem.gab[,c(1, 5, 10, 20, 30, 40, 50, 60, 70)], SpORcoords = mxy)
