@@ -1,6 +1,6 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-22
+Version: 0.3-23
 Authors@R: c(
    person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
    person("David", "Bauman", role = "ctb"),
@@ -22,7 +22,7 @@ Description: Tools for the multiscale spatial analysis of multivariate data.
     <doi:10.1890/11-1183.1>.
 Imports: ade4 (>= 1.7-13), adegraphics, adephylo, sp, spdep, lattice,
         methods, grDevices, graphics, MASS, stats, utils, shiny, vegan
-Suggests: knitr, rgeos, ape, rmarkdown, betapart
+Suggests: knitr, ape, rmarkdown, betapart
 License: GPL (>= 2)
 URL: https://github.com/sdray/adespatial
 BugReports: https://github.com/sdray/adespatial/issues
@@ -30,7 +30,7 @@ Encoding: UTF-8
 NeedsCompilation: yes
 RoxygenNote: 7.2.3
 VignetteBuilder: knitr
-Packaged: 2023-10-06 18:23:47 UTC; siberchicot
+Packaged: 2023-10-18 13:47:57 UTC; siberchicot
 Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
   David Bauman [ctb],
   Guillaume Blanchet [ctb],
@@ -46,4 +46,4 @@ Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
     (<https://orcid.org/0000-0002-7638-8318>)
 Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2023-10-12 11:20:03 UTC
+Date/Publication: 2023-10-18 21:10:02 UTC

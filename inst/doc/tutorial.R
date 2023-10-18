@@ -17,7 +17,7 @@ dim(mafragh$flo)
 ## -----------------------------------------------------------------------------
 str(mafragh$env)
 
-## ---- fig.height = 4, fig.width = 4-------------------------------------------
+## ----fig.height = 4, fig.width = 4--------------------------------------------
 mxy <- as.matrix(mafragh$xy)
 rownames(mxy) <- NULL
 s.label(mxy, ppoint.pch = 15, ppoint.col = "darkseagreen4", Sp = mafragh$Spatial.contour)
@@ -25,7 +25,7 @@ s.label(mxy, ppoint.pch = 15, ppoint.col = "darkseagreen4", Sp = mafragh$Spatial
 ## -----------------------------------------------------------------------------
 mafragh$spenames[c(1, 11), ]
 
-## ---- fig.height=3, fig.width=6-----------------------------------------------
+## ----fig.height=3, fig.width=6------------------------------------------------
 fpalette <- colorRampPalette(c("white", "darkseagreen2", "darkseagreen3", "palegreen4"))
 sp.flo <- SpatialPolygonsDataFrame(Sr = mafragh$Spatial, data = mafragh$flo, match.ID = FALSE)
 s.Spatial(sp.flo[,c(1, 11)], col = fpalette(3), nclass = 3)
@@ -57,7 +57,7 @@ set.seed(3)
 xyir <- mxy[sample(1:nrow(mafragh$xy), 20),]
 s.label(xyir, main = "Irregular sampling with 20 sites")
 
-## ---- fig.width = 5-----------------------------------------------------------
+## ----fig.width = 5------------------------------------------------------------
 nbnear1 <- dnearneigh(xyir, 0, 50)
 nbnear2 <- dnearneigh(xyir, 0, 305)
 
@@ -71,7 +71,7 @@ nbnear1
 ## -----------------------------------------------------------------------------
 nbnear2
 
-## ---- fig.width = 5-----------------------------------------------------------
+## ----fig.width = 5------------------------------------------------------------
 knn1 <- knearneigh(xyir, k = 1)
 nbknn1 <- knn2nb(knn1, sym = TRUE)
 knn2 <- knearneigh(xyir, k = 2)
@@ -134,16 +134,16 @@ mem.gab
 class(mem.gab)
 names(attributes(mem.gab))
 
-## ---- echo = -1---------------------------------------------------------------
+## ----echo = -1----------------------------------------------------------------
 oldpar <- par(mar = c(0, 2, 3, 0))
     barplot(attr(mem.gab, "values"), 
         main = "Eigenvalues of the spatial weighting matrix", cex.main = 0.7)
 par(oldpar)
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  plot(mem.gab[,c(1, 5, 10, 20, 30, 40, 50, 60, 70)], SpORcoords = mxy)
 
-## ---- fig.width = 5, fig.height = 5-------------------------------------------
+## ----fig.width = 5, fig.height = 5--------------------------------------------
 s.value(mxy, mem.gab[,c(1, 5, 10, 20, 30, 40, 50, 60, 70)], symbol = "circle", ppoint.cex = 0.6)
 
 ## -----------------------------------------------------------------------------
@@ -152,7 +152,7 @@ moranI <- moran.randtest(mem.gab, listwgab, 99)
 ## -----------------------------------------------------------------------------
 head(attr(mem.gab, "values") / moranI$obs)
 
-## ---- fig.height=6, fig.width=8, out.width="80%"------------------------------
+## ----fig.height=6, fig.width=8, out.width="80%"-------------------------------
 sp.env <- SpatialPolygonsDataFrame(Sr = mafragh$Spatial, data = mafragh$env, match.ID = FALSE)
 maps.env <- s.Spatial(sp.env, col = fpalette(6), nclass = 6)
 MC.env <- moran.randtest(mafragh$env, listwgab, nrepet = 999)
@@ -162,7 +162,7 @@ MC.env
 mc.bounds <- moran.bounds(listwgab)
 mc.bounds
 
-## ---- fig = TRUE--------------------------------------------------------------
+## ----fig = TRUE---------------------------------------------------------------
 env.maps <- s1d.barchart(MC.env$obs, labels = MC.env$names, plot = FALSE, xlim = 1.1 * mc.bounds, paxes.draw = TRUE, pgrid.draw = FALSE)
 addline(env.maps, v = mc.bounds, plot = TRUE, pline.col = 'red', pline.lty = 3)
 
@@ -176,7 +176,7 @@ MC.env$obs[5]
 ## -----------------------------------------------------------------------------
 pca.hell <- dudi.pca(mafragh$flo, scale = FALSE, scannf = FALSE, nf = 2)
 
-## ---- fig.height=3, fig.width=6-----------------------------------------------
+## ----fig.height=3, fig.width=6------------------------------------------------
 moran.randtest(pca.hell$li, listw = listwgab)
 s.value(mxy, pca.hell$li, Sp = mafragh$Spatial.contour, symbol = "circle", col = c("white", "palegreen4"), ppoint.cex = 0.6)
 
@@ -186,10 +186,10 @@ ms.hell <- multispati(pca.hell, listw = listwgab, scannf = F)
 ## -----------------------------------------------------------------------------
 summary(ms.hell)
 
-## ---- fig.height=3, fig.width= 6----------------------------------------------
+## ----fig.height=3, fig.width= 6-----------------------------------------------
 g.ms.maps <- s.value(mafragh$xy, ms.hell$li, Sp = mafragh$Spatial.contour, symbol = "circle", col = c("white", "palegreen4"), ppoint.cex = 0.6)
 
-## ---- fig.width = 5, fig.height = 5-------------------------------------------
+## ----fig.width = 5, fig.height = 5--------------------------------------------
 g.ms.spe <- s.arrow(ms.hell$c1, plot = FALSE)
 g.abund <- s.value(mxy, mafragh$flo[, c(12,11,31,16)],
     Sp = mafragh$Spatial.contour, symbol = "circle", col = c("black", "palegreen4"), plegend.drawKey = FALSE, ppoint.cex = 0.4, plot = FALSE)
@@ -208,7 +208,7 @@ sum(scalo$obs)
 ## -----------------------------------------------------------------------------
 plot(scalogram(mafragh$flo[,11], mem(listwgab), nblocks = 20))
 
-## ---- fig.height=5, fig.width=5-----------------------------------------------
+## ----fig.height=5, fig.width=5------------------------------------------------
 mspa.hell <- mspa(pca.hell, listwgab, scannf = FALSE, nf = 2)
 
 g.mspa <- scatter(mspa.hell, posieig = "topright", plot = FALSE)
@@ -258,10 +258,10 @@ test.rda <- randtest(rda.hell)
 test.rda
 plot(test.rda)
 
-## ---- fig.height=3, fig.width= 6----------------------------------------------
+## ----fig.height=3, fig.width= 6-----------------------------------------------
 s.value(mxy, rda.hell$li, Sp = mafragh$Spatial.contour, symbol = "circle", col = c("white", "palegreen4"), ppoint.cex = 0.6)
 
-## ---- fig.height = 5, fig.width = 5-------------------------------------------
+## ----fig.height = 5, fig.width = 5--------------------------------------------
 library(vegan)
 vp1 <- varpart(pca.hell$tab, mafragh$env, sel.lw$best$MEM.select)
 vp1
