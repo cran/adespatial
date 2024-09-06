@@ -1,16 +1,16 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-23
+Version: 0.3-24
 Authors@R: c(
    person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
    person("David", "Bauman", role = "ctb"),
    person("Guillaume", "Blanchet", role = "ctb"),
    person("Daniel", "Borcard", role = "ctb"),
    person("Sylvie", "Clappe", role = "ctb"),
-   person("Guillaume", "Guenard", role = "ctb"),
+   person("Guillaume", "Guenard", role = "ctb", comment = c(ORCID = "0000-0003-0761-3072")),
    person("Thibaut", "Jombart", role = "ctb"),
    person("Guillaume", "Larocque", role = "ctb"),
-   person("Pierre", "Legendre", role = "ctb"),
+   person("Pierre", "Legendre", role = "ctb", comment = c(ORCID = "0000-0002-3838-3305")),
    person("Naima", "Madi", role = "ctb"),
    person("Hélène H", "Wagner", role = "ctb"),
    person("Aurélie", "Siberchicot", role = c("ctb", "cre"), email = "aurelie.siberchicot@univ-lyon1.fr", comment = c(ORCID = "0000-0002-7638-8318"))
@@ -24,26 +24,27 @@ Imports: ade4 (>= 1.7-13), adegraphics, adephylo, sp, spdep, lattice,
         methods, grDevices, graphics, MASS, stats, utils, shiny, vegan
 Suggests: knitr, ape, rmarkdown, betapart
 License: GPL (>= 2)
-URL: https://github.com/sdray/adespatial
-BugReports: https://github.com/sdray/adespatial/issues
+URL: https://github.com/adeverse/adespatial,
+        http://adeverse.github.io/adespatial/
+BugReports: https://github.com/adeverse/adespatial/issues
 Encoding: UTF-8
 NeedsCompilation: yes
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
-Packaged: 2023-10-18 13:47:57 UTC; siberchicot
+Packaged: 2024-09-06 08:58:20 UTC; siberchicot
 Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
   David Bauman [ctb],
   Guillaume Blanchet [ctb],
   Daniel Borcard [ctb],
   Sylvie Clappe [ctb],
-  Guillaume Guenard [ctb],
+  Guillaume Guenard [ctb] (<https://orcid.org/0000-0003-0761-3072>),
   Thibaut Jombart [ctb],
   Guillaume Larocque [ctb],
-  Pierre Legendre [ctb],
+  Pierre Legendre [ctb] (<https://orcid.org/0000-0002-3838-3305>),
   Naima Madi [ctb],
   Hélène H Wagner [ctb],
   Aurélie Siberchicot [ctb, cre]
     (<https://orcid.org/0000-0002-7638-8318>)
 Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2023-10-18 21:10:02 UTC
+Date/Publication: 2024-09-06 16:10:06 UTC
