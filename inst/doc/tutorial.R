@@ -141,7 +141,7 @@ oldpar <- par(mar = c(0, 2, 3, 0))
 par(oldpar)
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  plot(mem.gab[,c(1, 5, 10, 20, 30, 40, 50, 60, 70)], SpORcoords = mxy)
+# plot(mem.gab[,c(1, 5, 10, 20, 30, 40, 50, 60, 70)], SpORcoords = mxy)
 
 ## ----fig.width = 5, fig.height = 5--------------------------------------------
 s.value(mxy, mem.gab[,c(1, 5, 10, 20, 30, 40, 50, 60, 70)], symbol = "circle", ppoint.cex = 0.6)
