@@ -1,6 +1,6 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-26
+Version: 0.3-27
 Authors@R: c(
    person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
    person("David", "Bauman", role = "ctb"),
@@ -33,7 +33,7 @@ Encoding: UTF-8
 NeedsCompilation: yes
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
-Packaged: 2025-03-21 11:15:14 UTC; siberchicot
+Packaged: 2025-03-31 15:25:23 UTC; siberchicot
 Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
   David Bauman [ctb],
   Guillaume Blanchet [ctb],
@@ -51,4 +51,4 @@ Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
     SoDA)
 Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2025-03-21 13:10:02 UTC
+Date/Publication: 2025-03-31 16:10:10 UTC

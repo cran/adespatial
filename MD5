@@ -1,4 +1,4 @@
-f25d577f2e6ab8e7d2550b0dc0eca511 *DESCRIPTION
+ea38ffbdce2719fe12206cb36645bbf4 *DESCRIPTION
 a05f5c28af43fc810c0c5c14f50bba5d *NAMESPACE
 073255bd0fb311ab6ec551387e73a6bd *R/Cperiodogram.R
 2a42fdbe23ddd0fdf8859f7e377ac4b4 *R/LCBD.comp.R
@@ -69,7 +69,7 @@ a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 35e242982e99903538341e90899a3a88 *inst/CITATION
 9563a2632f95d72f7fb9cec54f0fe7f7 *inst/doc/tutorial.R
 f3ae8422eb931a9321876c0b05216f6c *inst/doc/tutorial.Rmd
-25314adcf57c1b6bed9721d72d12a8ca *inst/doc/tutorial.html
+8fe846af844340c8cd37c7dfeba87555 *inst/doc/tutorial.html
 eecde2c5e5ea59ee8d61a3e6e86f866f *inst/extdata/gpsObject1.rda
 1085d317837dcd79be32f45cc7cc235a *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
@@ -138,8 +138,8 @@ a6dd4766357f1ab5c567a1e055ec6b48 *src/adesub.c
 400d0df1150ff52c04153bfa8fcd09b7 *src/adesub.h
 6adec5fac6d28d8e178e7a40ae81e1ca *src/betadiv.c
 4bf0ad40cbbe8f9394ea74ef4b26af8f *src/buildbinary.c
-c930da8f47dc6ab5b54679c2a5df6da0 *src/constr.hclust.c
-b5dae4e7b9760a143e58c8606e36d9f6 *src/constr.hclust.h
+2f6b90d46083db96f3f94fec25bbc7f7 *src/constr.hclust.c
+d115a4094ad99b6177ece70b305ab45c *src/constr.hclust.h
 0ff6d40ef8afb4e2c45363c2025eb051 *src/forward.c
 6d6ff81791c85d361cd488a1a142b6ca *src/geoddist.f
 def5fdd70c1467b9cde28aca34eef351 *src/geodistv.f
