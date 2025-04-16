@@ -1,4 +1,4 @@
-ea38ffbdce2719fe12206cb36645bbf4 *DESCRIPTION
+91d0e560976a738af96f90d23bf87be6 *DESCRIPTION
 a05f5c28af43fc810c0c5c14f50bba5d *NAMESPACE
 073255bd0fb311ab6ec551387e73a6bd *R/Cperiodogram.R
 2a42fdbe23ddd0fdf8859f7e377ac4b4 *R/LCBD.comp.R
@@ -43,7 +43,7 @@ f10fc0eb40b3a229600946e86150bc9e *R/msr.4thcorner.R
 4fa5d60ba9730d5c89f36f95ee2eda3a *R/msr.mantelrtest.R
 b79fa049c572195c4266925575a4338b *R/msr.varipart.R
 37a8f3d128e9249b52479740be77a338 *R/mst.nb.R
-905d254d59b76f9856be06ae719a8f00 *R/multispati.R
+39a28a2ef5fa2ac39b799326a764b529 *R/multispati.R
 d45a5172d0f0393c8f99df66a29fcd44 *R/ortho.AIC.R
 3b64b529dc5471321eb746de9e22b76a *R/orthobasis.poly.R
 8351bb192f65abb875e53885b31607aa *R/plot.TBI.R
@@ -54,13 +54,13 @@ f242571d18df9999c3beadaccc890a33 *R/scalogram.R
 fb3fedf2610126c09a42bd927e975a05 *R/scores.listw.R
 83c9da51d3c597b77d5088afd7ffab4d *R/stimodels.R
 c3ddc57d5ae8003dfa88a7192330dab1 *R/test.W.R
-1a58b8b806a76cc3efcd9524582efe1f *R/tpaired.krandtest.R
-cabb29b7e01c325be33ba5b971cdc119 *R/tpaired.randtest.R
+a54c6fcded51b63e7f04d3bf9128afe3 *R/tpaired.krandtest.R
+629c3bff8703b53d926057cd636e5507 *R/tpaired.randtest.R
 45e682816085ec73600a0e3b128c134c *R/trichoptera.R
 99ae8be60f6b9a1220b4449fe285b652 *R/utils-aem.R
 6ef116667e2b6e52ee58567610e99c63 *R/variogmultiv.R
-4454e632feb75ce4f508807d50b3b12f *build/partial.rdb
-aac1bb6438e36ab3a3b0456aa4c0cf3c *build/vignette.rds
+b52aabe9a2757fc86742763db9dafc9b *build/partial.rdb
+3a690f1c8edc6dc8dfa10ff4454484d5 *build/vignette.rds
 f667155d33538c35eacdbdb01b35434a *data/ScotchWhiskey.rda
 b5502fbf86d1e378537289b229d7b643 *data/Tiahura.rda
 4352f68bce08aaa44f5d1f30209e238e *data/bacProdxy.rda
@@ -69,7 +69,7 @@ a143c7c17f33a154ac60a28e7e94b5b8 *data/trichoptera.rda
 35e242982e99903538341e90899a3a88 *inst/CITATION
 9563a2632f95d72f7fb9cec54f0fe7f7 *inst/doc/tutorial.R
 f3ae8422eb931a9321876c0b05216f6c *inst/doc/tutorial.Rmd
-8fe846af844340c8cd37c7dfeba87555 *inst/doc/tutorial.html
+0386aa92bc6002b4c30f0c92dcb802bd *inst/doc/tutorial.html
 eecde2c5e5ea59ee8d61a3e6e86f866f *inst/extdata/gpsObject1.rda
 1085d317837dcd79be32f45cc7cc235a *inst/listw.explore/app.R
 c0f6fa59550c390fe762150b34b65653 *inst/listw.explore/www/style.css
@@ -127,8 +127,8 @@ e4f686bc440af20ea9ca625ae28665b7 *man/plot.orthobasisSp.Rd
 fc2037e34d079e65243c524961821028 *man/scalogram.Rd
 1539c271fb94e26f34bd607eae5e8b06 *man/stimodels.Rd
 392fff8f5a28433619fcd72b407f6c6e *man/test.W.Rd
-579c19a53b62158aa096602f19538297 *man/tpaired.krandtest.Rd
-a8536028043dc63e779d644dc20e0e7d *man/tpaired.randtest.Rd
+775f3c84c56bdfc0fb8fd6793d8a24d8 *man/tpaired.krandtest.Rd
+53c9fb9f718df08a8f106bc8bba9b78a *man/tpaired.randtest.Rd
 51774eb448fb0c5626fcc2920a0aea68 *man/trichoptera.Rd
 f117f4818afcbd51a257b633f2ba2312 *man/variogmultiv.Rd
 f009e46fcf131d28ea4ead122961b7bd *src/Makevars
