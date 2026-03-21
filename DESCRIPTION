@@ -1,6 +1,6 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-28
+Version: 0.3-29
 Authors@R: c(
    person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
    person("David", "Bauman", role = "ctb"),
@@ -33,22 +33,23 @@ Encoding: UTF-8
 NeedsCompilation: yes
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
-Packaged: 2025-04-16 12:56:23 UTC; siberchicot
-Author: Stéphane Dray [aut] (<https://orcid.org/0000-0003-0153-1105>),
+Packaged: 2026-03-20 21:05:40 UTC; siberchicot
+Author: Stéphane Dray [aut] (ORCID: <https://orcid.org/0000-0003-0153-1105>),
   David Bauman [ctb],
   Guillaume Blanchet [ctb],
   Daniel Borcard [ctb],
   Sylvie Clappe [ctb],
-  Guillaume Guenard [ctb] (<https://orcid.org/0000-0003-0761-3072>),
+  Guillaume Guenard [ctb] (ORCID:
+    <https://orcid.org/0000-0003-0761-3072>),
   Thibaut Jombart [ctb],
   Guillaume Larocque [ctb],
-  Pierre Legendre [ctb] (<https://orcid.org/0000-0002-3838-3305>),
+  Pierre Legendre [ctb] (ORCID: <https://orcid.org/0000-0002-3838-3305>),
   Naima Madi [ctb],
   Hélène H Wagner [ctb],
-  Aurélie Siberchicot [ctb, cre]
-    (<https://orcid.org/0000-0002-7638-8318>),
+  Aurélie Siberchicot [ctb, cre] (ORCID:
+    <https://orcid.org/0000-0002-7638-8318>),
   John Chambers [ctb] (Original author of two functions from package
     SoDA)
 Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2025-04-16 13:50:05 UTC
+Date/Publication: 2026-03-21 03:40:03 UTC
