@@ -1,6 +1,6 @@
 Package: adespatial
 Title: Multivariate Multiscale Spatial Analysis
-Version: 0.3-29
+Version: 0.3-30
 Authors@R: c(
    person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
    person("David", "Bauman", role = "ctb"),
@@ -23,17 +23,18 @@ Description: Tools for the multiscale spatial analysis of multivariate data.
     <doi:10.1890/11-1183.1>.
 Imports: ade4 (>= 1.7-13), adegraphics, adephylo, sp, spdep, lattice,
         methods, grDevices, graphics, MASS, stats, utils, shiny, vegan
+        (>= 2.6-4)
 Depends: R (>= 3.5.0)
-Suggests: knitr, ape, rmarkdown, betapart
+Suggests: ape, betapart, knitr, rmarkdown, testthat
 License: GPL (>= 2)
 URL: https://github.com/adeverse/adespatial,
         http://adeverse.github.io/adespatial/
 BugReports: https://github.com/adeverse/adespatial/issues
 Encoding: UTF-8
 NeedsCompilation: yes
-RoxygenNote: 7.3.2
 VignetteBuilder: knitr
-Packaged: 2026-03-20 21:05:40 UTC; siberchicot
+Config/roxygen2/version: 8.1.0
+Packaged: 2026-10-12 18:34:20 UTC; siberchicot
 Author: Stéphane Dray [aut] (ORCID: <https://orcid.org/0000-0003-0153-1105>),
   David Bauman [ctb],
   Guillaume Blanchet [ctb],
@@ -52,4 +53,4 @@ Author: Stéphane Dray [aut] (ORCID: <https://orcid.org/0000-0003-0153-1105>),
     SoDA)
 Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2026-03-21 03:40:03 UTC
+Date/Publication: 2026-10-12 19:20:02 UTC
